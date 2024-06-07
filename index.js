@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+var path = require("path");
 const express = require('express');
 const app = express();
 
@@ -14,9 +14,9 @@ mongoose.connect(MONGOURI);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
-app.set('views','./views');
+
 
 app.use(express.static('public'));
 
