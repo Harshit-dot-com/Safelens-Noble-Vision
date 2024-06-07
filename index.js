@@ -4,8 +4,10 @@ const express = require('express');
 const app = express();
 
 var mongoose = require('mongoose');
+const { MONGOURI } = process.env;
 
-mongoose.connect('mongodb+srv://harshitkumar4977:euaQJtI8WxjVE6c1@harshit.jus48fd.mongodb.net/VideoCallDB');
+
+mongoose.connect(MONGOURI);
 
 
 

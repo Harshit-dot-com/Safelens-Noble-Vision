@@ -106,7 +106,7 @@ const detect = async (req, res) => {
   
     if (imageFile) {
       const pythonScriptPath = path.join(__dirname, '..', 'detection', 'detect.py');
-      const pythonProcess = spawn('python3', [pythonScriptPath, imageFile.path, threshold.toString()]);
+      const pythonProcess = spawn('python', [pythonScriptPath, imageFile.path, threshold.toString()]);
   
       let scriptOutput = [];
   
